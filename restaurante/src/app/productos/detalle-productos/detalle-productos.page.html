@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detalle-productos</ion-title>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="productos"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{datos.titulo}}</ion-title>
+    
+    <ion-buttons slot="end" (click)="onClick()">
+      <ion-button defaultHref="productos"><ion-icon name="trash-outline" size="large"></ion-icon></ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-grid class="ion-no-padding">
+    <!--  -->
+    <ion-row>
+      <i-col>
+        
+        <ion-img [src]="datos.imgURL"></ion-img>
+        
+      </i-col>
+    </ion-row>
+  </ion-grid>
+      
+
+  
 </ion-content>

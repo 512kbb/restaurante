@@ -29,7 +29,7 @@ export class ProductosService {
   }
 ]
 
-  constructor() { }
+  constructor() {}
 
   getProductos () {
 
@@ -40,10 +40,11 @@ export class ProductosService {
 
   getProductosById(productoId : string) {
 
-     this.productos.find( serv => {
-      return serv.id === productoId
-
-     })
+    return {
+    ...this.productos.find( serv => {
+        return serv.id === productoId
+     })   
+  }
   }
 
   addProductos(titulo : string, imgURL : string) {
