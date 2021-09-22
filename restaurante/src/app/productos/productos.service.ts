@@ -47,7 +47,7 @@ export class ProductosService {
   }
   }
 
-  addProductos(titulo : string, imgURL : string) {
+  addProductos(titulo : string, imgURL : string, comentarios : string[]) {
 
     this.productos.push(
       {

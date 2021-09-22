@@ -21,6 +21,10 @@ const routes: Routes = [
       {
         path : ":prodID",
         loadChildren: () => import('./productos/detalle-productos/detalle-productos.module').then( m => m.DetalleProductosPageModule)
+      },
+      {
+        path  : 'agregar-producto',
+        loadChildren: () => import('./productos/agregar-producto/agregar-producto.module').then(m => m.AgregarProductoPageModule)
       }
     ]
     // loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
