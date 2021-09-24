@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosService} from '../productos.service';
+import { Producto } from './producto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-productos',
   templateUrl: './detalle-productos.page.html',
   styleUrls: ['./detalle-productos.page.scss'],
 })
+
 export class DetalleProductosPage implements OnInit {
 
-  datos = {}
+  producto : Producto;
+
   //variable para capturar la URL activa
-  constructor(private actRoute : ActivatedRoute, private pService : ProductosService) { }
+  constructor(private actRoute : ActivatedRoute, private pService : ProductosService, private router : Router) { }
 
   ngOnInit() {
 
@@ -22,12 +26,18 @@ export class DetalleProductosPage implements OnInit {
         const val = paramMap.get('prodID')
         console.log(val)
 
-        this.datos = this.pService.getProductosById(val)
-        console.log(this.datos)
-      }
-    )
+        this.producto = this.pService.getProductosById(val)
+        console.log(this.producto)
+      })
 
 
   }
+   // método que se llamará desde la GUI
+   eliminarProducto(){
+    console.log("eliminado")
+    this.pService.deleteProductos(this.producto.id)
+    this.router.navigate(['/productos'])
+  }
+
 
 }

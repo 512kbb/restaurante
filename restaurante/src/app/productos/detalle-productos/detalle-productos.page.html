@@ -4,9 +4,9 @@
       <ion-back-button defaultHref="productos"></ion-back-button>
     </ion-buttons>
 
-    <ion-title class="ion-no-padding">{{datos.titulo}}</ion-title>
+    <ion-title class="ion-no-padding">{{producto.titulo}}</ion-title>
     
-    <ion-buttons slot="end" (click)="onClick()">
+    <ion-buttons slot="end" (click)="eliminarProducto()">
       <ion-button defaultHref="productos"><ion-icon name="trash-outline" size="large"></ion-icon></ion-button>
     </ion-buttons>
 
@@ -20,14 +20,14 @@
     <ion-row>
       <ion-col>
         
-        <ion-img [src]="datos.imgURL"></ion-img>
+        <ion-img [src]="producto.imgURL"></ion-img>
         
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         
-        <h1 class="ion-text-center">{{datos.titulo}}</h1>
+        <h1 class="ion-text-center">{{producto.titulo}}</h1>
         
       </ion-col>
     </ion-row>
@@ -35,7 +35,7 @@
     <ion-row>
       <ion-col>
         <ion-list>
-          <ion-item *ngFor="let com of datos.comentarios">
+          <ion-item *ngFor="let com of producto.comentarios">
             {{com}}
           </ion-item>
         </ion-list>
