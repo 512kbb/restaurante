@@ -28,7 +28,11 @@ const routes: Routes = [
       }
     ]
     // loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+
 
 ];
 
